@@ -1,7 +1,7 @@
 'use strict';
 
 var angular = require('angular');
-var defaultPopoverTemplate = require('./angular-bootstrap-confirm.html');
+var defaultPopoverTemplate = require('./angular-bootstrap-confirm.tpl.js');
 require('angular-sanitize');
 require('./ui-bootstrap-position');
 var DEFAULT_POPOVER_URL = 'angular-bootstrap-confirm.html';
@@ -14,7 +14,7 @@ module.exports = angular
   ])
 
   .run(function($templateCache) {
-    $templateCache.put(DEFAULT_POPOVER_URL, defaultPopoverTemplate);
+    $templateCache.put(DEFAULT_POPOVER_URL, defaultPopoverTemplate.template);
   })
 
   .controller('PopoverConfirmCtrl', function($scope, $rootScope, $element, $attrs, $compile, $document, $window, $timeout,
